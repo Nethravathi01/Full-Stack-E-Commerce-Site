@@ -1,0 +1,34 @@
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+import Product from './productModel.js';
+import connectDB from './config/db.js';
+
+dotenv.config();
+connectDB();
+
+const products = [
+    { id: 1, name: "Smart Watch", price: 1999, image: "images/watch1.jpg" },
+    { id: 2, name: "Wireless Earbuds", price: 2499, image: "images/earbuds.jpg" },
+    { id: 3, name: "Gaming Mouse", price: 1250, image: "images/gamming.jpg" },
+    { id: 4, name: "Bluetooth Speaker", price: 3000, image: "images/speaker.jpg" },
+    { id: 5, name: "Laptop", price: 60000, image: "images/laptop.jpg" },
+    { id: 6, name: "Printer", price: 40000, image: "images/print.jpg" },
+    { id: 7, name: "Webcam", price: 10000, image: "images/webcam.jpg" },
+    { id: 8, name: "Juicer", price: 2000, image: "images/juicer.jpg" },
+    { id: 9, name: "Iron", price: 2000, image: "images/iron.jpg" },
+    { id: 10, name: "Radio", price: 3500, image: "images/radio.jpg" }
+];
+
+const importData = async () => {
+    try {
+        await Product.deleteMany(); // Optional: clears old data
+        await Product.insertMany(products);
+        console.log("Products Imported!");
+        process.exit();
+    } catch (error) {
+        console.error("Error with data import:", error);
+        process.exit(1);
+    }
+};
+
+importData();
