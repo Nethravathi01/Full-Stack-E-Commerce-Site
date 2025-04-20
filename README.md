@@ -55,5 +55,5 @@ Frontend: http://127.0.0.1:5500/frontend/index.html
 Backend API: http://localhost:3000/api/products
 
 ## Output Samples
-![Home Page](WebPage-UI-Screenshot/homepage)
-![Cart Page]("Webpage-UI-Screenshot/cartpage")
+![Home Page](Webpage-UI-Screenshots/homepage.jpg)
+![Cart Page](Webpage-UI-Screenshots/cartpage.jpg)
